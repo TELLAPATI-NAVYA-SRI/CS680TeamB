@@ -1,0 +1,79 @@
+.footer {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex; /* Align sections horizontally */
+  justify-content: space-between; /* Distribute sections evenly */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1; /* Equal space for each section */
+  min-width: 200px; /* Ensure sections do not shrink too much */
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f2f2f2;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #ff8c00; /* Highlight links with orange */
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #fff; /* Change to white on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #555;
+  padding-top: 20px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-bottom a {
+  color: #ff8c00;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #ff8c00;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}

@@ -1,0 +1,371 @@
+/* General Styling */
+.motel-detail {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.action-button,
+.action-review {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.action-button {
+  background-color: #fff;
+  color: black;
+}
+
+.action-button:hover {
+  background-color: #f1f1f1;
+}
+
+.action-review {
+  background-color: #103860;
+  color: white;
+}
+
+.action-review:hover {
+  background-color: #05172e;
+  color: white;
+}
+
+/* Information Row */
+.info-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.info-section {
+  flex: 1;
+  min-width: 300px; /* Prevents sections from shrinking too small */
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.info-section h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-section ul li {
+  margin-bottom: 5px;
+}
+
+.open-now {
+  color: green;
+  font-weight: bold;
+}
+
+/* Amenities */
+.amenities {
+  margin-top: 20px;
+}
+
+.amenities h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.amenity.available {
+  color: black;
+}
+
+.amenity.unavailable {
+  color: gray;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .action-button,
+  .action-review {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.action-book {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.action-book:hover {
+  background-color: #905a18;
+}
+
+
+.photos-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensures it fits within the parent container */
+  max-width: 500px; /* Maximum width for the container */
+  overflow: hidden; /* Prevent overflow of images */
+}
+
+.photo-thumbnail {
+  width: 100%; /* Scale image to fit the container */
+  max-height: 500px; /* Restrict the height */
+  max-width:500px;
+  object-fit: contain; /* Ensure the image scales without distortion */
+  margin-bottom: 20px;
+  border-radius: 8px; /* Add rounded corners for aesthetics */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.photo-navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.nav-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column; /* Arrange reviews vertically */
+  gap: 20px; /* Add space between review cards */
+  margin-top: 20px;
+}
+
+.review-card {
+  background-color: #f9f9f9; /* Light gray background for cards */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Add padding inside the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: flex; /* Align avatar and content horizontally */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Add spacing between avatar and content */
+}
+
+.user-avatar {
+  font-size: 60px; /* Adjust size of the avatar icon */
+  color: #ccc; /* Gray color for the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details {
+  margin-bottom: 10px; /* Add spacing below the user info */
+}
+
+.user-details h4 {
+  margin: 0;
+  font-size: 16px; /* Adjust font size for the username */
+  font-weight: bold;
+  color: #333; /* Neutral dark text color */
+}
+
+.user-details p {
+  margin: 0;
+  font-size: 14px; /* Adjust font size for the date */
+  color: #777; /* Subtle gray for the date */
+}
+
+.review-content {
+  font-size: 15px; /* Adjust review text size */
+  line-height: 1.5; /* Improve readability */
+  color: #444; /* Neutral dark text color */
+}
+
+.review-content-container {
+  flex: 1; /* Allow the review content to take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.page-button.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.averages-section {
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  width :50%
+}
+
+.average-list {
+  display: grid; /* Use grid for two-column layout */
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.average-item {
+  display: flex; /* Align category and stars in the same row */
+  align-items: center; /* Vertically align the content */
+  gap: 15px; /* Add spacing between category and stars */
+}
+
+.average-category {
+  font-size: 16px; /* Adjust font size */
+  font-weight: 600; /* Make it slightly bold */
+  color: #333; /* Neutral dark color */
+  flex-shrink: 0; /* Prevent shrinking of text */
+}
+
+.avgstars {
+  display: flex; /* Inline layout for stars */
+  gap: 5px; /* Add spacing between stars */
+}
+
+.avgstar {
+  font-size: 24px; /* Adjust star size */
+  color: #ccc; /* Default gray for empty stars */
+}
+
+.avgstar.filled {
+  color: rgb(188, 162, 12); /* Orange for filled stars */
+}
+
+.avgstar.half-filled {
+  background: linear-gradient(90deg, rgb(188, 162, 12) 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

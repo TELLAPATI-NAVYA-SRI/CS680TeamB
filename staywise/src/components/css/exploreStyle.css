@@ -1,0 +1,259 @@
+.container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    flex: 0 0 200px;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .sidebar h4 {
+    margin: 10px 0;
+  }
+  
+  .price-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .price-filters button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .price-filters button.selected {
+    background-color: #2c3e50 ;/* Brown color */
+    color: white;
+  }
+  
+  .feature-checkboxes {
+    margin-top: 20px;
+  }
+  
+  .feature-checkboxes label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .feature-checkboxes input {
+    margin-right: 8px;
+  }
+  
+  .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-container {
+    display: flex;
+    justify-content: center; /* Center the container */
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Space between elements */
+    margin: 20px 0; /* Add some spacing above and below the container */
+  }
+  
+  .search-wrapper {
+    position: relative;
+    width: 40%;
+  }
+  .search-wrapper-location {
+    position: relative;
+    width: 50%;
+  }
+  
+  .search-input {
+    width: 30%;
+    height: 40px;
+    padding: 10px 10px 10px 10px; /* Adjust for icon space */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .search-input-location {
+    width: 50%;
+    height: 40px;
+    padding: 10px 10px 10px 10px; /* Adjust for icon space */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  
+ 
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Adjust position next to input */
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px; /* Adjust size for visibility */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .search-icon:hover {
+    color: #007bff;
+  }
+
+
+  
+  
+  .search-input::placeholder {
+    color: black; /* Light gray placeholder text */
+    font-style: italic; /* Italicize placeholder */
+  }
+  
+  
+  
+  .sort-dropdown {
+    width: 150px; /* Set a fixed width */
+    padding: 10px; /* Add padding for better spacing */
+    font-size: 16px; /* Increase font size for readability */
+    color: #333; /* Dark text for readability */
+    background-color: #f8f9fa; /* Light background for contrast */
+    border: 2px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Slightly rounded corners */
+    outline: none; /* Remove default outline */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: border-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .sort-dropdown:hover {
+    border-color: #007bff; /* Highlight border on hover */
+  }
+  
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next row */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards */
+    margin: 20px 0;
+  }
+  
+  .card {
+    background-color: #ffffff; /* White background for cards */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width for cards */
+    overflow: hidden; /* Ensures content stays within the card */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  
+  .card img {
+    width: 100%; /* Full width of the card */
+    height: 200px; /* Fixed height for image */
+    object-fit: cover; /* Ensures image scales properly */
+    border-bottom: 1px solid #ddd; /* Divider between image and content */
+  }
+  
+  .card-content {
+    padding: 15px; /* Space inside the card content */
+    font-family: 'Roboto', Arial, sans-serif; /* Professional-looking font */
+  }
+  
+  .card-content .title {
+    font-size: 1.5rem; /* Larger font for title */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Dark gray for readability */
+  }
+  
+  .card-content h5 {
+    font-size: 1rem; /* Slightly smaller font for subtitles */
+    color: #555; /* Medium gray */
+    line-height: 1.5; /* Better readability */
+    margin-bottom: 15px;
+  }
+  
+  .card-content .features {
+    font-size: 0.9rem; /* Smaller font for details */
+    color: #666; /* Light gray text */
+    line-height: 1.6; /* Spacing between lines */
+  }
+  
+  .card-content .features strong {
+    color: #333; /* Darker gray for labels */
+  }
+  
+  
+  .rating,
+  .description,
+  .open-status,
+  .price,
+  .dog-friendly {
+    margin: 5px 0;
+    word-wrap: break-word; /* Prevent content overflow */
+  }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 1rem;
+  }
+  
+  .pagination button {
+    background-color: none;
+    margin: 0 ;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .pagination span {
+    margin: 0 10px;
+  }
+  .card img {
+    width: 250px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image scales correctly */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    display: block; /* Ensures proper layout */
+    margin: 0 auto; /* Center the image in the card */
+  }
+
+  .movebutton{
+    background-color: white;
+    border:none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+
+  }
+    
+ 

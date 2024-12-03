@@ -130,33 +130,11 @@ useEffect(() => {
   };
 
   useEffect(() => {
-    const fetchLocation = async (latitude, longitude) => {
+    
+
+    const fetchMotels = async () => {
       try {
-        const response = await axios.get(
-          `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-        );
-        
-
-        // Get city and full state name
-        const { city, state } = response.data.address;
-
-        // Convert full state name to abbreviation
-        const stateAbbreviation = stateNameToAbbreviation[state.toLowerCase()] || state;
-
-        setLocation({ city, state: stateAbbreviation });
-
-        // Fetch motels for the detected state
-        fetchMotels(stateAbbreviation);
-        
-      } catch (err) {
-        console.error(err);
-        setError('Unable to fetch location details.');
-      }
-    };
-
-    const fetchMotels = async (state) => {
-      try {
-        
+        const state = 'NY'
         const response = await axios.get(`http://54.89.157.75:5000/motels?state=${state}`);
         // Fetch average ratings for each motel
         const ratings = {};
@@ -174,20 +152,8 @@ useEffect(() => {
         setError('Unable to fetch motels for your location.');
       }
     };
-
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          fetchLocation(latitude, longitude);
-        },
-        () => {
-          setError('Geolocation permission denied. Please allow access to your location.');
-        }
-      );
-    } else {
-      setError('Geolocation is not supported by your browser.');
-    }
+    fetchMotels()
+    
   }, []);
 
 

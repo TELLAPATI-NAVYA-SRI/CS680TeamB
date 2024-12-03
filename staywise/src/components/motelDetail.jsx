@@ -30,7 +30,7 @@ const MotelDetail = ({ match }) => {
 
   const fetchMotel = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/motel/${id}`);
+      const response = await axios.get(`http://54.89.157.75:5000/motel/${id}`);
       setMotel(response.data);
       setIsLoading(false);
     } catch (err) {
@@ -42,7 +42,7 @@ const MotelDetail = ({ match }) => {
 
   const fetchAverages = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/reviews/averages/${id}`);
+      const response = await axios.get(`http://54.89.157.75:5000/reviews/averages/${id}`);
       setAverages(response.data.averages);
       SetReviewCount(response.data.reviewCount)
       console.log(averages.overall)
@@ -54,7 +54,7 @@ const MotelDetail = ({ match }) => {
 
   const fetchReviews = async (page = 1) => {
     try {
-      const response = await axios.get(`http://localhost:5000/reviews/${id}?page=${page}`);
+      const response = await axios.get(`http://54.89.157.75:5000/reviews/${id}?page=${page}`);
       setReviews(response.data.reviews);
       setTotalPages(response.data.totalPages);
       setCurrentPage(response.data.currentPage);
@@ -70,7 +70,7 @@ const MotelDetail = ({ match }) => {
   
     try {
       console.log("Logging interaction with data:", { userId: user.id, motelId: id, action: "view" });
-      const response = await axios.post('http://localhost:5000/log-one-interaction', {
+      const response = await axios.post('http://54.89.157.75:5000/log-one-interaction', {
         userId: user.id,  // Ensure this is valid
           // Specify the action
         motelId: id,      // Ensure this is valid
@@ -98,7 +98,7 @@ const MotelDetail = ({ match }) => {
 
   const fetchPhotos = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/reviews/photos/${id}`);
+      const response = await axios.get(`http://54.89.157.75:5000/reviews/photos/${id}`);
       setPhotos(response.data); // This updates the photos state asynchronously
       setShowPhotosModal(true); // Show modal after fetching photos
       

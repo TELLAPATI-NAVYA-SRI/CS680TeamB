@@ -65,7 +65,7 @@ const Landing = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', formData);
+      const response = await axios.post('http://54.89.157.75:5000/login', formData);
       localStorage.setItem('userData', JSON.stringify(response.data.user));
       navigate('/explore');
     } catch (error) {
@@ -89,7 +89,7 @@ const Landing = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/forgot-password', { email, newPassword });
+      await axios.post('http://54.89.157.75:5000/forgot-password', { email, newPassword });
       alert("Password updated successfully!");
       setModalOpen(false);
     } catch (err) {

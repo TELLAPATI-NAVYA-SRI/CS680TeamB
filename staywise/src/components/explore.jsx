@@ -40,7 +40,7 @@ const Explore = () => {
   
       const payload = { userId, action, motelIds };
   
-      const response = await axios.post("http://localhost:5000/log-interaction", payload);
+      const response = await axios.post("http://54.89.157.75:5000/log-interaction", payload);
       
     } catch (error) {
       console.error("Error logging interaction:", error);
@@ -53,7 +53,7 @@ const [recommendedMotels, setRecommendedMotels] = useState([]);
 const fetchRecommendations = async (userId, city, state) => {
   try {
       console.log(city,state)
-      const response = await axios.get(`http://localhost:5000/recommend-motels/${userId}`);
+      const response = await axios.get(`http://54.89.157.75:5000/recommend-motels/${userId}`);
       setRecommendedMotels(response.data.recomms);
       console.log(recommendedMotels)
   } catch (error) {
@@ -157,11 +157,11 @@ useEffect(() => {
     const fetchMotels = async (state) => {
       try {
         
-        const response = await axios.get(`http://localhost:5000/motels?state=${state}`);
+        const response = await axios.get(`http://54.89.157.75:5000/motels?state=${state}`);
         // Fetch average ratings for each motel
         const ratings = {};
         for (const motel of response.data) {
-          const ratingResponse = await axios.get(`http://localhost:5000/reviews/averages/${motel.id}`);
+          const ratingResponse = await axios.get(`http://54.89.157.75:5000/reviews/averages/${motel.id}`);
           ratings[motel.id] = ratingResponse.data;
           
         }
@@ -210,7 +210,7 @@ useEffect(() => {
     
     try {
       const response = await axios.get(
-        `http://localhost:5000/locationSearch?state=${stateAbbreviation}&city=${city}`
+        `http://54.89.157.75:5000/locationSearch?state=${stateAbbreviation}&city=${city}`
       );
       
       setLocation({ city, state: stateAbbreviation });

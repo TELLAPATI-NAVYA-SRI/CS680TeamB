@@ -31,7 +31,7 @@ const ReviewPage = () => {
   useEffect(() => {
     const fetchMotel = async () => {
       try {
-        const response = await axios.get(`http://54.89.157.75:5000/motel/${id}`);
+        const response = await axios.get(`http://54.234.37.135:5000/motel/${id}`);
         setMotel(response.data);
       } catch (err) {
         console.error('Error fetching motel:', err);
@@ -96,7 +96,7 @@ const ReviewPage = () => {
     }
 
     try {
-      const response = await axios.post('http://54.89.157.75:5000/reviews', formData, {
+      const response = await axios.post('http://54.234.37.135:5000/reviews', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

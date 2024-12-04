@@ -18,9 +18,11 @@ const Navigation = () => {
 
   return (
     <Navbar expand="lg" className="navbar-custom">
-      <Navbar.Brand href="/explore" className="brand-name">
+      {user?(<Navbar.Brand href="/explore" className="brand-name">
         StayWise
-      </Navbar.Brand>
+      </Navbar.Brand>):(<Navbar.Brand href="/" className="brand-name">
+        StayWise
+      </Navbar.Brand>)}
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -43,7 +45,7 @@ const Navigation = () => {
             <Nav.Link href="#footer">
               <i className="bi bi-envelope"></i> Contact
             </Nav.Link>
-            <Nav.Link href="#login">
+            <Nav.Link href="/#login">
               <i className="bi bi-login"></i> Login
             </Nav.Link>
             <Nav.Link href="/SignUp">
